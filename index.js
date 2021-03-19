@@ -16,6 +16,8 @@ const io = socketIo(server, {
     }
 })
 
+// TODO CREATE CHAT APP FUNCTIONALITY FOR APP WITH COMMENTED OUT CODE
+
 let interval
 
 io.on('connection', (socket) => {
