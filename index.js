@@ -16,7 +16,7 @@ const io = socketIo(server, {
     }
 })
 
-// TODO CREATE CHAT APP FUNCTIONALITY FOR APP WITH COMMENTED OUT CODE
+// TODO SEND MESSAGES TO FRONT END 
 
 let interval
 
@@ -26,10 +26,10 @@ io.on('connection', (socket) => {
         clearInterval(interval)
     }
     interval = setInterval(() => getApiAndEmit(socket), 1000)
-    // socket.on('chat message', (msg) => {
-    //     io.emit('chat message', msg)
-    //     console.log('message ', msg)
-    // })
+    socket.on('chat-message', (msg) => {
+        //io.emit('chat message', msg)
+        console.log('message ', msg)
+    })
     socket.on('disconnect', () => {
         console.log('fatality, user')
         clearInterval(interval)
