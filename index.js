@@ -16,8 +16,6 @@ const io = socketIo(server, {
     }
 })
 
-// TODO SEND MESSAGES TO FRONT END 
-
 let interval
 
 io.on('connection', (socket) => {
